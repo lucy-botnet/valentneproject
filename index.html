@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .heart {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(45deg);
+            margin: 20px;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            width: 100px;
+            height: 100px;
+            left: 50px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day!</h1>
+    <div class="heart"></div>
+    <p>Spread love and joy on this special day!</p>
+</body>
+</html>
