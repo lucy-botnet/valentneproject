@@ -1,46 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Happy Valentine's Day!</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-        .heart {
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            position: relative;
-            transform: rotate(45deg);
-            margin: 20px;
-        }
-        .heart::before,
-        .heart::after {
-            content: '';
-            background-color: red;
-            border-radius: 50%;
-            position: absolute;
-        }
-        .heart::before {
-            width: 100px;
-            height: 100px;
-            top: -50px;
-            left: 0;
-        }
-        .heart::after {
-            width: 100px;
-            height: 100px;
-            left: 50px;
-            top: 0;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Project</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Happy Valentine's Day!</h1>
-    <div class="heart"></div>
-    <p>Spread love and joy on this special day!</p>
+    <div class="slider">
+        <img src="shubhi.jpeg" alt="Valentine's Day Slider" />
+    </div>
+    <div class="password-protected">
+        <h2>Access the Secret Love Notes</h2>
+        <input type="password" id="password" placeholder="Enter Password" />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="message"></p>
+    </div>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            if (password === '0809') {
+                message.textContent = 'Access Granted';
+            } else {
+                message.textContent = 'Access Denied';
+            }
+        }
+    </script>
 </body>
 </html>
