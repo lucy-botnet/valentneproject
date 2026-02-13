@@ -299,13 +299,23 @@ alert("Wrong date 😛 Try again!");
 
 /* MOVING NO BUTTON */
 
-const noBtn=document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover",()=>{
+noBtn.addEventListener("mousemove",(e)=>{
 
 noBtn.style.position="absolute";
-noBtn.style.left=Math.random()*80+"vw";
-noBtn.style.top=Math.random()*80+"vh";
+
+/* move slightly away from mouse but stay nearby */
+let offsetX = (Math.random()*120)-60; 
+let offsetY = (Math.random()*80)-40;
+
+let newX = e.clientX + offsetX;
+let newY = e.clientY + offsetY;
+
+/* keep button inside screen */
+newX = Math.max(20, Math.min(window.innerWidth-120, newX));
+newY = Math.max(20, Math.min(window.innerHeight-60, newY));
+
+noBtn.style.left = newX+"px";
+noBtn.style.top = newY+"px";
 
 });
 
